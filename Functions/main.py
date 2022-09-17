@@ -10,12 +10,29 @@ print(mean(1,2,3,4))
 
 
 def return_string(*args):
-    list = []
+    empty_list = []
     for arg in args:
-        list.append(arg.upper())
+        if type(arg) == str:
 
-    return sorted(list)
+            empty_list.append(arg.upper())
+
+    return sorted(empty_list)
+
 
 print(return_string("snow", "glacier", "iceberg"))
+print(return_string(True, None, False, 12, 3+5j, 'aaa', [1, 2, 3], (1, 2, 3), {1, 2, 3}, {'a': 1, 'b': 2}))
 
 #File Processing
+
+
+with open("vegetables.txt", "w+") as myfile:
+
+    myfile.write("tomatoes\ncucumbers\nonions\n")
+    myfile.write("beans")
+
+with open("vegetables.txt", "a+") as myfile:
+
+    myfile.write("tomatoes\ncucumbers\nonions\n")
+    myfile.write("beans")
+
+    
